@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.centralizar{
+			position: absolute;
+			top: 100px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+		}
+
+		#a1, #a2, #a3, #b1, #b2, #b3, #c1, #c2, #c3{
+			border: 2px solid black;
+			width: 50px;
+			height: 50px;
+			float: left;
+		}
+		#tabuleiro{
+			width: 162px;
+		}
+	</style>
+</head>
+<body>
+	<h1>É a vez do jogador <img src="x.jpeg" id="jogador"></img></h1>
+	<div class="centralizar" id="tabuleiro">
+		<div id="a1">
+			<img id="img1"></img>
+		</div>
+		<div id="a2">
+			<img id="img2"></img>
+		</div>
+		<div id="a3">
+			<img id="img3"></img>
+		</div>
+
+		<div id="b1">
+			<img id="img4"></img>
+		</div>
+		<div id="b2">
+			<img id="img5"></img>
+		</div>
+		<div id="b3">
+			<img id="img6"></img>
+		</div>
+
+		<div id="c1">
+			<img id="img7"></img>
+		</div>
+		<div id="c2">
+			<img id="img8"></img>
+		</div>
+		<div id="c3">
+			<img id="img9"></img>
+		</div>
+	</div>
+
+	<!-- <h1>Evento click</h1><br>
+	<button >Testar</button> -->
+
+<script type="text/javascript">
+	let jogada = document.querySelector("#jogador")
+	let tabuleiro = document.querySelector("#tabuleiro")
+
+	tabuleiro.addEventListener("click", (e) => {
+		if(jogada.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg"){
+			let img1 = document.querySelector("#img1");
+			let img2 = document.querySelector("#img2");
+			if(e.target.id === img1.parentNode.id){
+				img1.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img2.parentNode.id){
+				img2.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img3.parentNode.id){
+				img3.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img4.parentNode.id){
+				img4.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img5.parentNode.id){
+				img5.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img6.parentNode.id){
+				img6.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img7.parentNode.id){
+				img7.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img8.parentNode.id){
+				img8.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}else if(e.target.id === img9.parentNode.id){
+				img9.src = "x.jpeg"
+				jogada.src = "o.jpeg"
+			}
+
+			if((img1.src !== "" && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img9.src !== "" && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img3.src !== "" && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img7.src !== "" && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img1.src !== "" && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img2.src !== "" && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img3.src !== "" && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img4.src !== "" && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img6.src !== "" && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img7.src !== "" && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img8.src !== "" && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img9.src !== "" && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img1.src !== "" && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img4.src !== "" && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img7.src !== "" && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img2.src !== "" && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img8.src !== "" && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img3.src !== "" && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img6.src !== "" && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg") && (img9.src !== "" && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}
+		}else{
+			
+			let img1 = document.querySelector("#img1");
+			let img2 = document.querySelector("#img2");
+			if(e.target.id === img1.parentNode.id){
+				img1.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img2.parentNode.id){
+				img2.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img3.parentNode.id){
+				img3.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img4.parentNode.id){
+				img4.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img5.parentNode.id){
+				img5.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img6.parentNode.id){
+				img6.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img7.parentNode.id){
+				img7.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img8.parentNode.id){
+				img8.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}else if(e.target.id === img9.parentNode.id){
+				img9.src = "o.jpeg"
+				jogada.src = "x.jpeg"
+			}
+
+			if((img1.src !== "" && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img9.src !== "" && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img3.src !== "" && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img7.src !== "" && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img1.src !== "" && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img2.src !== "" && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img3.src !== "" && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img4.src !== "" && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img6.src !== "" && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img7.src !== "" && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img8.src !== "" && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img9.src !== "" && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img1.src !== "" && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img4.src !== "" && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img7.src !== "" && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img2.src !== "" && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img5.src !== "" && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img8.src !== "" && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}else if((img3.src !== "" && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img6.src !== "" && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg") && (img9.src !== "" && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.jpeg")){
+				alert("Ganhou Miseráviii")
+				document.location.reload(true);
+			}
+		}
+	})
+
+	// let botao = document.querySelector("button")
+	// botao.addEventListener("click", function(){
+	// 	alert("Pegou")
+	// 	let criandoLi = document.createElement("button")
+	// 	let texto = document.createTextNode("Ai sim")
+	// 	criandoLi.insertAdjacentElement("afterend",document.querySelector("h1").appendChild(criandoLi))
+	// })
+</script>
+
+</body>
+</html>
