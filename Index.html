@@ -98,7 +98,7 @@
 
 <script type="text/javascript">
 	let jogada = document.querySelector("#jogador")
-	let tabuleiro = document.querySelector("#tabuleiro")
+	var tabuleiro = document.querySelector("#tabuleiro")
 	let contX = 0, contO = 0;
 	let img1 = document.querySelector("#img1");
 	let img2 = document.querySelector("#img2");
@@ -109,8 +109,15 @@
 	let img7 = document.querySelector("#img7");
 	let img8 = document.querySelector("#img8");
 	let img9 = document.querySelector("#img9");
+	let array = ["url(fundo.jpg)", "url(fundo2.jpg)", "url(fundo3.jpg)", "url(fundo4.jpg)", "url(fundo5.jpg)", "url(fundo6.jpg)", "url(fundo7.jpg)", "url(fundo8.jpg)"];
+	let num = 0;
+
+	function retornarFundo(array){
+		return array[Math.round(Math.floor(Math.random(num) * 9))]
+	}
 
 	function mensagemGanhadorX(){
+		tabuleiro.removeEventListener("click", listener );
 		let divPersonalizado =  document.querySelector("div").nextElementSibling
 		divPersonalizado.setAttribute("class",  "alert alert alert-warning");
 		divPersonalizado.setAttribute("role",  "alert")
@@ -122,6 +129,8 @@
 			contX++;
 			document.querySelector("#contX").innerHTML = contX;
 			img1.src = "", img2.src = "", img3.src = "", img4.src = "", img5.src = "", img6.src = "", img7.src = "", img8.src = "", img9.src = "";
+			tabuleiro.addEventListener("click", listener );
+			document.body.style.backgroundImage = retornarFundo(array)
 		}, 3000);
 	}
 
@@ -136,22 +145,26 @@
 			divPersonalizado.removeAttribute("class", "role");
 			divPersonalizado.textContent = "";
 			img1.src = "", img2.src = "", img3.src = "", img4.src = "", img5.src = "", img6.src = "", img7.src = "", img8.src = "", img9.src = "";
+			document.body.style.backgroundImage = retornarFundo(array)
 		}, 3000);
 	}
 
 	function mensagemGanhadorO(){
+		tabuleiro.removeEventListener("click", listener );
 		let divPersonalizado =  document.querySelector("div").nextElementSibling
-				divPersonalizado.setAttribute("class",  "alert alert-warning");
-				divPersonalizado.setAttribute("role",  "alert")
-				const text = document.createTextNode("O jogador O ganhou!!!")
-				divPersonalizado.appendChild(text)
-				setTimeout(function(){
-					divPersonalizado.removeAttribute("class", "role");
-					divPersonalizado.textContent = "";
-					contO++;
-					document.querySelector("#contO").innerHTML = contO;
-					img1.src = "", img2.src = "", img3.src = "", img4.src = "", img5.src = "", img6.src = "", img7.src = "", img8.src = "", img9.src = "";
-				}, 3000);
+		divPersonalizado.setAttribute("class",  "alert alert-warning");
+		divPersonalizado.setAttribute("role",  "alert")
+		const text = document.createTextNode("O jogador O ganhou!!!")
+		divPersonalizado.appendChild(text)
+		setTimeout(function(){
+			divPersonalizado.removeAttribute("class", "role");
+			divPersonalizado.textContent = "";
+			contO++;
+			document.querySelector("#contO").innerHTML = contO;
+			img1.src = "", img2.src = "", img3.src = "", img4.src = "", img5.src = "", img6.src = "", img7.src = "", img8.src = "", img9.src = "";
+			tabuleiro.addEventListener("click", listener );
+			document.body.style.backgroundImage = retornarFundo(array)
+		}, 3000);
 	}
 
 	function validarGanhadorX(){
@@ -206,7 +219,9 @@
 		document.location.reload(true);
 	})
 
-	tabuleiro.addEventListener("click", (e) => {
+	tabuleiro.addEventListener("click", listener );
+
+	function listener(e) {
 
 		if(jogada.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png"){
 			if(e.target.id === img1.parentNode.id){
@@ -300,7 +315,7 @@
 				validarGanhadorO();
 			}, 100);
 		}
-	})
+	}
 
 	// let botao = document.querySelector("button")
 	// botao.addEventListener("click", function(){
