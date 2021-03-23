@@ -19,7 +19,7 @@
 		}
 		.centralizar{
 			position: absolute;
-			top: 35%;
+			top: 40%;
 			bottom: 0vh;
 			left: 0px;
 			right: 0px;
@@ -40,7 +40,7 @@
 			background-color: #E0EEEE;
 			color: black;
 			padding: 15px;
-			margin-top: 1vh;
+			margin-top: 2%;
 		}
 		.alert-warning{
 			background-color: #ff8c00;
@@ -54,12 +54,12 @@
 </head>
 <body>
 
+	<div align="center" style="color: white; font-weight: bolder"></div>
+
 	<h1 align="center">É a vez do jogador <img width="50" height="50" src="x.png" id="jogador"></img></h1>
 	<h5 align="center">Jogador X: <span align="center" id="contX">0</span></h5>
 	<h5 align="center">Jogador O: <span id="contO">0</span></h5>
 	<div align="center" style="padding: 8px; font-weight: bolder;"><button type="button" class="btn btn-danger" id="resetGame">Resetar Jogo.</button></div>
-
-	<div align="center" style="color: white; font-weight: bolder;"></div>
 
 	<div class="centralizar" id="tabuleiro">
 		<div id="a1">
@@ -118,7 +118,7 @@
 
 	function mensagemGanhadorX(){
 		tabuleiro.removeEventListener("click", listener );
-		let divPersonalizado =  document.querySelector("div").nextElementSibling
+		let divPersonalizado =  document.querySelector("div")
 		divPersonalizado.setAttribute("class",  "alert alert alert-warning");
 		divPersonalizado.setAttribute("role",  "alert")
 		const text = document.createTextNode("O jogador X ganhou!!!")
@@ -135,8 +135,7 @@
 	}
 
 	function mensagemEmpatou(){
-		document.querySelector(".centralizar").innerHTML = ""
-		let divPersonalizado =  document.querySelector("div").nextElementSibling
+		let divPersonalizado =  document.querySelector("div")
 		divPersonalizado.setAttribute("class",  "alert alert alert-warning");
 		divPersonalizado.setAttribute("role",  "alert")
 		const text = document.createTextNode("O jogo Empatou!!!")
@@ -151,7 +150,7 @@
 
 	function mensagemGanhadorO(){
 		tabuleiro.removeEventListener("click", listener );
-		let divPersonalizado =  document.querySelector("div").nextElementSibling
+		let divPersonalizado = document.querySelector("div")
 		divPersonalizado.setAttribute("class",  "alert alert-warning");
 		divPersonalizado.setAttribute("role",  "alert")
 		const text = document.createTextNode("O jogador O ganhou!!!")
@@ -168,23 +167,23 @@
 	}
 
 	function validarGanhadorX(){
-		if((img1.src && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img9.src && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		if((img1.src && (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img9.src && (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img3.src && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img7.src && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img3.src && (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img7.src && (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img1.src && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img2.src && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img3.src && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img1.src && (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img2.src && (img2.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img3.src && (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img4.src && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img6.src && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img4.src && (img4.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img6.src && (img6.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img7.src && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img8.src && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img9.src && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img7.src && (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img8.src && (img8.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img9.src && (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img1.src && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img4.src && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img7.src && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img1.src && (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img4.src && (img4.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img7.src && (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img2.src && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img8.src && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img2.src && (img2.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img8.src && (img8.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img3.src && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img6.src && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png") && (img9.src && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png")){
+		}else if((img3.src && (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img6.src && (img6.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png") && (img9.src && (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png")){
 			mensagemGanhadorX();
-		}else if((img1.src && (img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img2.src && (img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img3.src && (img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img4.src && (img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img5.src && (img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img6.src && (img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img7.src && (img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img8.src && (img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img9.src && (img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png"))){
+		}else if((img1.src && ((img1.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img2.src && ((img2.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img2.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img3.src && ((img3.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img4.src && ((img4.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img4.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img5.src && ((img5.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img6.src && ((img6.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img6.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img7.src && ((img7.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img8.src && ((img8.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img8.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img9.src && ((img9.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png"))){
 			mensagemEmpatou();
 		}else{
 			return;
@@ -192,23 +191,23 @@
 	}
 
 	function validarGanhadorO(){
-		if((img1.src && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img9.src && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		if((img1.src && (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img9.src && (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 				mensagemGanhadorO();
-		}else if((img3.src && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img7.src && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img3.src && (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img7.src && (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img1.src && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img2.src && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img3.src && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img1.src && (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img2.src && (img2.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img3.src && (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img4.src && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img6.src && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img4.src && (img4.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img6.src && (img6.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img7.src && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img8.src && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img9.src && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img7.src && (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img8.src && (img8.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img9.src && (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img1.src && img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img4.src && img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img7.src && img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img1.src && (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img4.src && (img4.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img7.src && (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img2.src && img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img5.src && img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img8.src && img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img2.src && (img2.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img5.src && (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img8.src && (img8.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img3.src && img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img6.src && img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png") && (img9.src && img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")){
+		}else if((img3.src && (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img6.src && (img6.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png") && (img9.src && (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")){
 			mensagemGanhadorO();
-		}else if((img1.src && (img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img1.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img2.src && (img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img2.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img3.src && (img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img3.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img4.src && (img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img4.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img5.src && (img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img5.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img6.src && (img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img6.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img7.src && (img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img7.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img8.src && (img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img8.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png")) && (img9.src && (img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png" || img9.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/o.png"))){
+		}else if((img1.src && ((img1.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img1.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img2.src && ((img2.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img2.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img3.src && ((img3.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img3.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img4.src && ((img4.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img4.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img5.src && ((img5.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img5.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img6.src && ((img6.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img6.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img7.src && ((img7.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img7.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img8.src && ((img8.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img8.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png")) && (img9.src && ((img9.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png" || (img9.src).substring((jogada.src).length-5, (jogada.src).length) === "o.png"))){
 			mensagemEmpatou();
 		}else{
 			return;
@@ -222,8 +221,7 @@
 	tabuleiro.addEventListener("click", listener );
 
 	function listener(e) {
-
-		if(jogada.src === "file:///home/jair/Documentos/Jogo%20da%20Velha/x.png"){
+		if((jogada.src).substring((jogada.src).length-5, (jogada.src).length) === "x.png"){
 			if(e.target.id === img1.parentNode.id){
 				img1.src = "x.png";
 				jogada.src = "o.png";
@@ -288,45 +286,14 @@
 				jogada.src = "x.png"
 			}
 
-
-	    // if((img1.src && img1.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img5.src && img5.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img9.src && img9.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //         mensagemGanhadorX();
-        // }else if((img3.src && img3.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img5.src && img5.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img7.src && img7.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img1.src && img1.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img2.src && img2.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img3.src && img3.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img4.src && img4.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img5.src && img5.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img6.src && img6.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img7.src && img7.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img8.src && img8.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img9.src && img9.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img1.src && img1.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img4.src && img4.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img7.src && img7.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img2.src && img2.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img5.src && img5.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img8.src && img8.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img3.src && img3.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img6.src && img6.src === "https://jogodavelhaemjs.000webhostapp.com/o.png") && (img9.src && img9.src === "https://jogodavelhaemjs.000webhostapp.com/o.png")){
-        //     mensagemGanhadorX();
-        // }else if((img1.src && (img1.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img1.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img2.src && (img2.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img2.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img3.src && (img3.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img3.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img4.src && (img4.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img4.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img5.src && (img5.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img5.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img6.src && (img6.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img6.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img7.src && (img7.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img7.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img8.src && (img8.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img8.src === "https://jogodavelhaemjs.000webhostapp.com/x.png")) && (img9.src && (img9.src === "https://jogodavelhaemjs.000webhostapp.com/o.png" || img9.src === "https://jogodavelhaemjs.000webhostapp.com/x.png"))){
-		// 	mensagemEmpatou();
-		// }else{
-        //     return;
-        // }
-
 			setTimeout(function(){
 				validarGanhadorO();
 			}, 100);
 		}
 	}
 
-	// let botao = document.querySelector("button")
-	// botao.addEventListener("click", function(){
-	// 	alert("Pegou")
-	// 	let criandoLi = document.createElement("button")
-	// 	let texto = document.createTextNode("Ai sim")
-	// 	criandoLi.insertAdjacentElement("afterend",document.querySelector("h1").appendChild(criandoLi))
-	// })
 </script>
 
-<!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
